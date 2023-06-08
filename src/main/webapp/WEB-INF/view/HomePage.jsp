@@ -27,19 +27,13 @@ padding-left: 5px;
 		<form:form action="/LC/homePageProcess" modelAttribute="userInfoDTO">
 			Your Name : <form:input  id="yourName" path="yourName" />
 			            <form:errors id="error" path="yourName" />
-			<br>
-			<br>
-			<br>
+			<br><br><br>
             Crush Name : <form:input id="crushName" path="crushName" />
                          <form:errors id="error" path="crushName"/>
-            <br>
-            <br>
-            <br>
+            <br><br><br>
             Term And Condtion : <form:checkbox id="termAndCondtion" path="termAndConditon"/>
                                 <form:errors id="error" path="termAndConditon"/>
-            <br>
-            <br>
-            <br>
+            <br><br><br>
 			<input type="submit" value="submit">
 			<br>
 		</form:form>
