@@ -41,6 +41,7 @@ padding-left: 5px;
             <br>
             <br>
 			<input type="submit" value="submit">
+			<br>
 		</form:form>
 	</div>
 	
