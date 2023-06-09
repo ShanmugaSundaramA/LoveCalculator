@@ -3,13 +3,19 @@ package com.sundar.lc.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import com.sundar.lc.formatter.AmountFormatter;
+import com.sundar.lc.formatter.CreditCardFormatter;
+import com.sundar.lc.formatter.PhoneNumberFormatter;
 
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = "com.sundar.lc.controllers")
-public class LCApplicationConfig {
+public class LCApplicationConfig implements WebMvcConfigurer{
 
 	@Bean
      InternalResourceViewResolver viewResolver() {
@@ -18,5 +24,14 @@ public class LCApplicationConfig {
     	 viewResolver.setSuffix(".jsp");
     	 return viewResolver;
      }
+	
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		System.out.println("inside the config file addformatter.");
+		registry.addFormatter(new PhoneNumberFormatter());
+		registry.addFormatter(new CreditCardFormatter());
+		registry.addFormatter(new AmountFormatter());
+	}
+	
 	
 }

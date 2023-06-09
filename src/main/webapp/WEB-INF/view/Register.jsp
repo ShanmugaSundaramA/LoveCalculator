@@ -57,6 +57,14 @@ padding-left: 5px;
 		    Female <form:radiobutton path="gender" value="Female"/>
 </td>
 <td><form:errors id="error" path="gender"/></td></tr>
+
+<tr><td>Email : </td><td><form:input path="communicationDTO.email"/> </td></tr>
+
+<tr><td>Phone : </td><td><form:input path="communicationDTO.phone"/> </td></tr>
+
+<tr><td>CreditCard : </td><td><form:input path="billDTO.creditCard"/> </td></tr>
+
+<tr><td>Amount : </td><td><form:input path="billDTO.amount"/> </td></tr>
 </table>		  
 		    <input type="submit" value="Submit" >
 		</form:form>

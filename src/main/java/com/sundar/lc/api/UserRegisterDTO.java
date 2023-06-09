@@ -26,6 +26,10 @@ public class UserRegisterDTO {
 	@NotBlank(message = "select your gender.")
 	private String gender;
 
+	private CommunicationDTO communicationDTO;
+	
+	private BillDTO billDTO;
+	
 	public String getName() {
 		return name;
 	}
@@ -73,6 +77,22 @@ public class UserRegisterDTO {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public CommunicationDTO getCommunicationDTO() {
+		return communicationDTO;
+	}
+
+	public void setCommunicationDTO(CommunicationDTO communicationDTO) {
+		this.communicationDTO = communicationDTO;
+	}
+
+	public BillDTO getBillDTO() {
+		return billDTO;
+	}
+
+	public void setBillDTO(BillDTO billDTO) {
+		this.billDTO = billDTO;
 	}
 
 }

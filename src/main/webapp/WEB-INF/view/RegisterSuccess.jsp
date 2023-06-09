@@ -15,16 +15,21 @@
 	
 	<div id="registerResult" align="center">
 	  <h3>Details entered by you are </h3> 
-	  Name     : ${userRegisterDTO.name } <br>
-	  UserName : ${userRegisterDTO.userName } <br>
-	  Password : ${userRegisterDTO.password } <br>
-	  Country  : ${userRegisterDTO.country } <br>
-	  Hobbies  :
+	  Name       : ${userRegisterDTO.name } <br>
+	  UserName   : ${userRegisterDTO.userName } <br>
+	  Password   : ${userRegisterDTO.password } <br>
+	  Country    : ${userRegisterDTO.country } <br>
+	  Hobbies    :
 	  <c:forEach var="hobby" items="${userRegisterDTO.hobby }">
 	        ${hobby}
 	  </c:forEach>
 	  <br>
-	  Gender   : ${userRegisterDTO.gender } <br>
+	  Gender     : ${userRegisterDTO.gender } <br>
+	  Email      : ${userRegisterDTO.communicationDTO.email } <br> 
+	  Phone      : ${userRegisterDTO.communicationDTO.phone } <br>
+	  CreditCard : ${userRegisterDTO.billDTO.creditCard } <br>
+	  Amount : ${userRegisterDTO.billDTO.amount } <br>
+	   
 	</div>
 </body>
 </html>
