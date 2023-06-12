@@ -61,7 +61,8 @@ public class RegistrationController {
 		System.out.println("show-RegisterSuccess-Page method.");
 		
 	    if(result.hasErrors()) {
-	    	return "RegisterSuccess";
+	        System.out.println(result.getAllErrors());
+	    	return "Register";
 	    }
 		return "RegisterSuccess";
 	}

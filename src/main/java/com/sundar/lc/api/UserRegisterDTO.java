@@ -3,6 +3,8 @@ package com.sundar.lc.api;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.sundar.lc.validators.Age;
+
 public class UserRegisterDTO {
 
 	@NotBlank(message = "* not be blank")
@@ -29,6 +31,10 @@ public class UserRegisterDTO {
 	private CommunicationDTO communicationDTO;
 	
 	private BillDTO billDTO;
+	
+	@Age(lower = 30, upper = 60)
+	private Integer age;
+	
 	
 	public String getName() {
 		return name;
@@ -93,6 +99,14 @@ public class UserRegisterDTO {
 
 	public void setBillDTO(BillDTO billDTO) {
 		this.billDTO = billDTO;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
 
 }

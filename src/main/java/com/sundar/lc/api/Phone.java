@@ -1,8 +1,12 @@
 package com.sundar.lc.api;
 
+import com.sundar.lc.validators.Pone;
+
 public class Phone {
 
 	private String countryCode;
+
+	@Pone(message = "10 digit.")
 	private String phoneNum;
 
 	public String getCountryCode() {
