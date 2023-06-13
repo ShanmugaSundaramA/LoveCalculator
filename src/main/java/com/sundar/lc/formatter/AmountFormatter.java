@@ -21,7 +21,6 @@ public class AmountFormatter implements Formatter<Amount>{
 		String[] amountArray= text.split(" ");
 		Amount amount = new Amount();
 		amount.setBillAmount(Integer.parseInt(amountArray[0]));
-
 		amount.setLocalDefinition(Currency.getInstance(amountArray[1]).getSymbol(locale.US));
 		return amount;
 	}

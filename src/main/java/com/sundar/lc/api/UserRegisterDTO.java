@@ -1,14 +1,14 @@
 package com.sundar.lc.api;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import com.sundar.lc.validators.Age;
 
 public class UserRegisterDTO {
 
-	@NotBlank(message = "* not be blank")
-	@Size(min = 3,max = 15,message = "* must be 3 to 15")
+	@NotEmpty(message = "* not be blank")
 	private String name;
 	
 	@NotBlank(message = "* not be blank")
