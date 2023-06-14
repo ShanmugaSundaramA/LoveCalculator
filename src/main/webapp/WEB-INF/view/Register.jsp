@@ -60,7 +60,7 @@ padding-left: 5px;
 
 <tr><td>Age : </td><td><form:input id="age" path="age"/> </td><td><form:errors id="error" path="age" /></td></tr>
 
-<tr><td>Email : </td><td><form:input path="communicationDTO.email"/> </td></tr>
+<tr><td>Email : </td><td><form:input path="communicationDTO.email"/> </td><td><form:errors path="communicationDTO.email"/></td></tr>
 
 <tr><td>Phone : </td><td><form:input path="communicationDTO.phone"/> </td><td><form:errors path="communicationDTO.phone" /></td></tr>
 

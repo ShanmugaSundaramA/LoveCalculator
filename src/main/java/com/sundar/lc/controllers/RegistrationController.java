@@ -4,6 +4,8 @@ import java.util.Currency;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +26,16 @@ import com.sundar.lc.formatter.CreditCardFormatter;
 import com.sundar.lc.propertyEditor.CreditCardPropertyEditor;
 import com.sundar.lc.propertyEditor.CurrencyPropertyEditor;
 import com.sundar.lc.propertyEditor.NamePropertyEditor;
+import com.sundar.lc.validators.EmailValidator;
+import com.sundar.lc.validators.UserNameValidator;
 
 @Controller
 public class RegistrationController {
 
+	@Autowired
+	@Qualifier("emailValidator")
+	private EmailValidator emailValidator;
+	
 	@RequestMapping("/register")
 	public String register(Model model) {
 		UserRegisterDTO userRegisterDTO = new UserRegisterDTO();
@@ -69,6 +77,10 @@ public class RegistrationController {
 
 		System.out.println("show-RegisterSuccess-Page method.");
 
+		//for calling validator manually.
+		//we can also do component and autowiring for creating EmailValidator.
+		emailValidator.validate(userRegisterDTO, result);
+		
 		if (result.hasErrors()) {
 			System.out.println(result.getAllErrors());
 			return "Register";
@@ -84,16 +96,22 @@ public class RegistrationController {
 		StringTrimmerEditor editor = new StringTrimmerEditor(true);
 		binder.registerCustomEditor(String.class, "name", editor);
 
-		// this will edit all the properties inside the class.
+//      this will edit all the properties inside the class.
 //    	NamePropertyEditor editor2=new NamePropertyEditor();
 //    	binder.registerCustomEditor(String.class, editor2);
 
 		NamePropertyEditor editor2 = new NamePropertyEditor();
 		binder.registerCustomEditor(String.class, "name", editor2);
 
-    	CreditCardPropertyEditor editor3=new CreditCardPropertyEditor();
-        binder.registerCustomEditor(CreditCard.class,"billDTO.creditCard",editor3);
-    	
+//      for call custom validators		
+		binder.addValidators(new UserNameValidator());
+//		binder.addValidators(new EmailValidator());
+		
+//      this will call the custom editor 
+//    	CreditCardPropertyEditor editor3=new CreditCardPropertyEditor();
+//      binder.registerCustomEditor(CreditCard.class,"billDTO.creditCard",editor3);
+
+//      using this we can call formatter from here also.
 //		binder.addCustomFormatter(new CreditCardFormatter());
 
 		// binder.setDisallowedFields("name");

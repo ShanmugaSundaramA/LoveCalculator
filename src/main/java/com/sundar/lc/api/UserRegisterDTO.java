@@ -8,34 +8,31 @@ import com.sundar.lc.validators.Age;
 
 public class UserRegisterDTO {
 
-	@NotEmpty(message = "* not be blank")
+	@NotEmpty(message = "{string.empty}")
 	private String name;
 	
-	@NotBlank(message = "* not be blank")
-	@Size(min = 3,max = 15,message = "* must be 3 to 15")
 	private String userName;
-	
+
 	@NotBlank(message = "* not be blank")
-	@Size(min=3,max = 8,message = "* must be 3 to 15")
+	@Size(min = 3, max = 8, message = "* must be 3 to 15")
 	private String password;
-	
+
 	@NotBlank(message = "select your counrty.")
 	private String country;
-	
-	@Size(min=1,message = "select any one." )
+
+	@Size(min = 1, message = "select any one.")
 	private String hobby[];
-	
+
 	@NotBlank(message = "select your gender.")
 	private String gender;
 
 	private CommunicationDTO communicationDTO;
-	
+
 	private BillDTO billDTO;
-	
+
 	@Age(lower = 30, upper = 60)
 	private Integer age;
-	
-	
+
 	public String getName() {
 		return name;
 	}
@@ -67,7 +64,6 @@ public class UserRegisterDTO {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
 
 	public String[] getHobby() {
 		return hobby;

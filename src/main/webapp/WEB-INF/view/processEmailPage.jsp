@@ -4,24 +4,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>ResultPage</title>
+<title>Process Email Page</title>
 </head>
 <body>
+
 	<div id="heading" align="center">
 		<h1>Love Calculator</h1>
 	</div>
-	
 	<hr>
-	
 	<div id="result" align="center">
-	<h3>The Love Calculator Predicts : </h3>
-	
-	<p> ${userInfoDTO.yourName} and ${userInfoDTO.crushName} are  </p>
-	
-	<b>Lovers</b>
-	
-	<p><a href="/LC/sendEmail/${userInfoDTO.yourName}">Send Result to Your Email</a></p>
+		<h2>Hi</h2>
+		<p>Email Sucessfully sent to <b>${emailDTO.email}</b></p>
 	</div>
-	
+
+
 </body>
 </html>
