@@ -17,7 +17,7 @@
 	<hr>
 
 	<div id="result" align="center">
-		<h3>Hi ${userName}</h3>
+		<h3>Hi ${userInfoDTO.yourName}</h3>
 
 		<h4>Send Result To Your Email</h4>
 

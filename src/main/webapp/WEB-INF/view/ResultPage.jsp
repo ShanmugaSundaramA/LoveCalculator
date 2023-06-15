@@ -20,7 +20,7 @@
 	
 	<b>Lovers</b>
 	
-	<p><a href="/LC/sendEmail/${userInfoDTO.yourName}">Send Result to Your Email</a></p>
+	<p><a href="/LC/sendEmail">Send Result to Your Email</a></p>
 	</div>
 	
 </body>

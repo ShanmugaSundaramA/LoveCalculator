@@ -13,7 +13,7 @@
 	</div>
 	<hr>
 	<div id="result" align="center">
-		<h2>Hi</h2>
+		<h2>Hi ${userInfoDTO.yourName}</h2>
 		<p>Email Sucessfully sent to <b>${emailDTO.email}</b></p>
 	</div>
 
